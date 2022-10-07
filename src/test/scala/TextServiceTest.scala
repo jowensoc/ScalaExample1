@@ -7,7 +7,7 @@ class TextServiceTest extends AnyFunSuite {
     var results = TextService.ReverseEachWord("Joe Bloggs");
     var expectedResults = "eoJ sggolB";
 
-    printf("Results: '%s'. Expected: %s \r\n", results, expectedResults);
+    printf("Results: '%s'. Expected: '%s' \r\n", results, expectedResults);
 
     assert(results.equals(expectedResults));
   }
@@ -17,7 +17,7 @@ class TextServiceTest extends AnyFunSuite {
 
     var expectedResults = "ecnef eht revo depmuj xoF";
 
-    printf("Results: '%s'. Expected: %s \r\n", results, expectedResults);
+    printf("Results: '%s'. Expected: '%s' \r\n", results, expectedResults);
 
     assert(results.equals(expectedResults));
   }
@@ -28,9 +28,30 @@ class TextServiceTest extends AnyFunSuite {
 
     var expectedResults = "ecnef eht revo depmuj xoF";
 
-    printf("Results: '%s'. Expected: %s \r\n", results, expectedResults);
+    printf("Results: '%s'. Expected: '%s' \r\n", results, expectedResults);
 
     assert(results.equals(expectedResults));
+  }
+
+  test("TextService.RemoveVowels") {
+    var results = TextService.RemoveVowels("Apple Pie");
+
+    var expectedResults = "ppl P";
+
+    printf("Case Sensitivity Ignored. Results: '%s'. Expected: '%s' \r\n", results, expectedResults);
+
+    //assert(results.equals(expectedResults));
+    assert(results.equalsIgnoreCase(expectedResults));
+  }
+
+test("TextService.RemoveConsonants") {
+    var results = TextService.RemoveConsonants("Apple Pie");
+
+    var expectedResults = "Ae ie";
+
+    printf("Case Sensitivity Ignored. Results: '%s'. Expected: '%s' \r\n", results, expectedResults);
+
+    assert(results.equalsIgnoreCase(expectedResults));
   }
 
 }
