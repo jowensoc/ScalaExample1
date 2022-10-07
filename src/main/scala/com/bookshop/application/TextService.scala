@@ -32,4 +32,30 @@ object TextService {
     return reverseText(item, true);
   }
 
+
+  def RemoveVowels(item: String): String = {
+    var vowels = Array("a", "e", "i", "o", "u");
+    var cleanedText = "";
+
+    for(letter <- item) {
+      if (!vowels.contains(letter.toLower.toString)) {
+        cleanedText+= letter;
+      }
+    }
+
+    return cleanedText;
+  }
+def RemoveConsonants(item: String): String = {
+    var consonants = Array("b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "n", "p", "q", "r", "s", "t", "v", "x", "z", "w", "y");
+    var cleanedText = "";
+
+    for(letter <- item) {
+      if (!consonants.contains(letter.toLower.toString)) {
+        cleanedText += letter;
+      }
+    }
+
+    return cleanedText;
+  }
+
 }
